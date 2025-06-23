@@ -1,0 +1,22 @@
+name: ci.yml
+on:
+  push:
+    branches:
+      - main
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: build test with clang
+        run: |
+          clang --version
+          sudo apt-get install libc++-dev
+          make clang_test_build
+
+      - name: test with clang
+        run: |
+          clang --version
+          make clang_test_run
+
