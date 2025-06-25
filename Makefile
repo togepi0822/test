@@ -11,9 +11,9 @@ else
 endif
 
 CLANG_PATH ?= clang
-CLANG_PATH := $(or $(CIELLAB_CLANG),$(CLANG_PATH))
+CLANG_PATH := $(CLANG_PATH)
 CLANGXX_PATH ?= clang++
-CLANGXX_PATH := $(or $(CIELLAB_CLANGXX),$(CLANGXX_PATH))
+CLANGXX_PATH := $(CLANGXX_PATH)
 
 clean:
 	rm -rf $(BUILD_DIR)
